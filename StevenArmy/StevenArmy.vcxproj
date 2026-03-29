@@ -131,6 +131,7 @@
   <ItemGroup>
     <ClCompile Include="battery.cpp" />
     <ClCompile Include="batteryRating.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="swapStation.cpp" />
     <ClCompile Include="vehicle.cpp" />
   </ItemGroup>

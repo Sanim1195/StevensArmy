@@ -1,12 +1,105 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Software  II\\StevenArmy\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|D:\\Software  II\\StevenArmy\\StevenArmy\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|solutionrelative:StevenArmy\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|solutionrelative:StevenArmy\\swapStation.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|solutionrelative:StevenArmy\\swapStation.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|D:\\Software  II\\StevenArmy\\StevenArmy\\batteryRating.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|solutionrelative:StevenArmy\\batteryRating.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|D:\\Software  II\\StevenArmy\\StevenArmy\\battery.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1AE68FFC-60A9-4FCD-AA0C-29EDC09DBAB5}|StevenArmy\\StevenArmy.vcxproj|solutionrelative:StevenArmy\\battery.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "swapStation.cpp",
+              "DocumentMoniker": "D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.cpp",
+              "RelativeDocumentMoniker": "StevenArmy\\swapStation.cpp",
+              "ToolTip": "D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.cpp",
+              "RelativeToolTip": "StevenArmy\\swapStation.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-29T15:39:51.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Software  II\\StevenArmy\\StevenArmy\\main.cpp",
+              "RelativeDocumentMoniker": "StevenArmy\\main.cpp",
+              "ToolTip": "D:\\Software  II\\StevenArmy\\StevenArmy\\main.cpp",
+              "RelativeToolTip": "StevenArmy\\main.cpp",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAA4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-03-29T15:37:41.963Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "batteryRating.h",
+              "DocumentMoniker": "D:\\Software  II\\StevenArmy\\StevenArmy\\batteryRating.h",
+              "RelativeDocumentMoniker": "StevenArmy\\batteryRating.h",
+              "ToolTip": "D:\\Software  II\\StevenArmy\\StevenArmy\\batteryRating.h",
+              "RelativeToolTip": "StevenArmy\\batteryRating.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-29T15:34:38.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "swapStation.h",
+              "DocumentMoniker": "D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.h",
+              "RelativeDocumentMoniker": "StevenArmy\\swapStation.h",
+              "ToolTip": "D:\\Software  II\\StevenArmy\\StevenArmy\\swapStation.h",
+              "RelativeToolTip": "StevenArmy\\swapStation.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-29T15:33:03.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "battery.h",
+              "DocumentMoniker": "D:\\Software  II\\StevenArmy\\StevenArmy\\battery.h",
+              "RelativeDocumentMoniker": "StevenArmy\\battery.h",
+              "ToolTip": "D:\\Software  II\\StevenArmy\\StevenArmy\\battery.h",
+              "RelativeToolTip": "StevenArmy\\battery.h",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-03-29T15:28:54.873Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

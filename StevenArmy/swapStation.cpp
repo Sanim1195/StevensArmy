@@ -4,11 +4,7 @@
 #include <limits>
 #include <stdexcept>
 
-static constexpr double PI = 3.14159265358979323846;
 
-static double toRadians(double degrees) {
-    return degrees * PI / 180.0;
-}
 
 SwapStation::SwapStation(const std::string& stationId,
     const std::string& name,
@@ -43,16 +39,10 @@ void SwapStation::removeBattery(const std::string& batteryId) {
 }
 
 double SwapStation::distanceTo(double lat, double lng) const {
-    // Haversine formula — accurate to within ~0.5% for typical distances
-    double dLat = toRadians(lat - latitude);
-    double dLng = toRadians(lng - longitude);
-
-    double a = std::sin(dLat / 2) * std::sin(dLat / 2)
-        + std::cos(toRadians(latitude)) * std::cos(toRadians(lat))
-        * std::sin(dLng / 2) * std::sin(dLng / 2);
-
-    double c = 2.0 * std::atan2(std::sqrt(a), std::sqrt(1.0 - a));
-    return EARTH_RADIUS_KM * c;
+    // Straight-line distance in miles (1 degree lat/lng 69 miles)
+    double dLat = lat - latitude;
+    double dLng = lng - longitude;
+    return std::sqrt(dLat * dLat + dLng * dLng) * 69.0;
 }
 
 bool SwapStation::hasCompatible(const std::string& slotSpec, int minRating) const {

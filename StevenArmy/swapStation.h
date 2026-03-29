@@ -41,7 +41,8 @@ private:
     std::string name;
     double latitude;
     double longitude;
+	// For simplicity, we store batteries directly in the station. In a real system, this might be more complex.
     std::vector<Battery> availableBatteries;
 
-    static constexpr double EARTH_RADIUS_KM = 6371.0;
-}; #pragma once
+
+};
