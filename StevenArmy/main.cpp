@@ -53,12 +53,135 @@ Battery* findBattery(std::vector<Battery>& batteries, const std::string& id) {
 }
 
 // -------------------------------------------------------
+// Prepopulate demo data
+// -------------------------------------------------------
+void prepopulate(std::vector<Vehicle>& vehicles,
+    std::vector<Battery>& batteries,
+    std::vector<SwapStation>& stations) {
+
+    // 10 Vehicles
+    vehicles.push_back(Vehicle("V001", "sedan", "Tesla", "Model 3", "Type-A-75kWh"));
+    vehicles.push_back(Vehicle("V002", "suv", "Tesla", "Model X", "Type-B-100kWh"));
+    vehicles.push_back(Vehicle("V003", "sedan", "Rivian", "R1S", "Type-A-75kWh"));
+    vehicles.push_back(Vehicle("V004", "truck", "Rivian", "R1T", "Type-B-100kWh"));
+    vehicles.push_back(Vehicle("V005", "sedan", "Chevy", "Bolt", "Type-A-75kWh"));
+    vehicles.push_back(Vehicle("V006", "suv", "Ford", "Mach-E", "Type-A-75kWh"));
+    vehicles.push_back(Vehicle("V007", "sedan", "Hyundai", "Ioniq6", "Type-C-60kWh"));
+    vehicles.push_back(Vehicle("V008", "suv", "Kia", "EV9", "Type-C-60kWh"));
+    vehicles.push_back(Vehicle("V009", "motorcycle", "Zero", "SR/F", "Type-D-15kWh"));
+    vehicles.push_back(Vehicle("V010", "truck", "GMC", "Hummer EV", "Type-B-100kWh"));
+
+    // Set owner ratings
+    vehicles[0].setOwnerRating(5);
+    vehicles[1].setOwnerRating(4);
+    vehicles[2].setOwnerRating(4);
+    vehicles[3].setOwnerRating(3);
+    vehicles[4].setOwnerRating(5);
+    vehicles[5].setOwnerRating(2);
+    vehicles[6].setOwnerRating(3);
+    vehicles[7].setOwnerRating(4);
+    vehicles[8].setOwnerRating(5);
+    vehicles[9].setOwnerRating(1);
+
+    // 10 Batteries
+    batteries.push_back(Battery("B001", "Lithium-Ion", 75.0f, "Type-A-75kWh"));
+    batteries.push_back(Battery("B002", "Lithium-Ion", 75.0f, "Type-A-75kWh"));
+    batteries.push_back(Battery("B003", "Lithium-Ion", 100.0f, "Type-B-100kWh"));
+    batteries.push_back(Battery("B004", "Lithium-Ion", 100.0f, "Type-B-100kWh"));
+    batteries.push_back(Battery("B005", "LFP", 75.0f, "Type-A-75kWh"));
+    batteries.push_back(Battery("B006", "LFP", 60.0f, "Type-C-60kWh"));
+    batteries.push_back(Battery("B007", "LFP", 60.0f, "Type-C-60kWh"));
+    batteries.push_back(Battery("B008", "Solid-State", 100.0f, "Type-B-100kWh"));
+    batteries.push_back(Battery("B009", "Lithium-Ion", 15.0f, "Type-D-15kWh"));
+    batteries.push_back(Battery("B010", "Solid-State", 75.0f, "Type-A-75kWh"));
+
+    // Rate each battery using BatteryRating
+    struct BatteryData { std::string id, owner; float cap; int cycles, temp; };
+    BatteryData data[] = {
+        {"B001", "O001",  97.0f, 120,  0},
+        {"B002", "O002",  88.0f, 430,  1},
+        {"B003", "O003",  76.0f, 870,  2},
+        {"B004", "O004",  62.0f, 1100, 4},
+        {"B005", "O005",  95.0f, 200,  0},
+        {"B006", "O006",  83.0f, 560,  1},
+        {"B007", "O007",  55.0f, 1450, 7},
+        {"B008", "O008",  99.0f, 50,   0},
+        {"B009", "O009",  91.0f, 310,  0},
+        {"B010", "O010",  70.0f, 950,  3}
+    };
+    for (int i = 0; i < 10; i++) {
+        BatteryRating r("R-" + data[i].id, data[i].owner, data[i].id,
+            data[i].cap, data[i].cycles, data[i].temp);
+        batteries[i].setRating(r.getScore());
+    }
+
+    // Install batteries onto vehicles
+    vehicles[0].installBattery("B001");
+    vehicles[1].installBattery("B003");
+    vehicles[2].installBattery("B002");
+    vehicles[3].installBattery("B004");
+    vehicles[4].installBattery("B005");
+    vehicles[5].installBattery("B010");
+    vehicles[6].installBattery("B006");
+    vehicles[7].installBattery("B007");
+    vehicles[8].installBattery("B009");
+    vehicles[9].installBattery("B008");
+
+    // 10 Swap Stations (US cities with real coords)
+    stations.push_back(SwapStation("S001", "St. Louis Downtown", 38.6270, -90.1994));
+    stations.push_back(SwapStation("S002", "St. Louis West", 38.6190, -90.3100));
+    stations.push_back(SwapStation("S003", "Chicago Loop", 41.8827, -87.6233));
+    stations.push_back(SwapStation("S004", "Kansas City Hub", 39.0997, -94.5786));
+    stations.push_back(SwapStation("S005", "Nashville Center", 36.1627, -86.7816));
+    stations.push_back(SwapStation("S006", "Memphis Depot", 35.1495, -90.0490));
+    stations.push_back(SwapStation("S007", "Indianapolis North", 39.7684, -86.1581));
+    stations.push_back(SwapStation("S008", "Louisville Gateway", 38.2527, -85.7585));
+    stations.push_back(SwapStation("S009", "Springfield IL", 39.7817, -89.6501));
+    stations.push_back(SwapStation("S010", "Bloomington Normal", 40.4842, -88.9937));
+
+    // Stock stations with spare batteries (those not installed on vehicles)
+    // S001 gets Type-A spares
+    stations[0].addBattery(Battery("BS001", "Lithium-Ion", 75.0f, "Type-A-75kWh"));
+    stations[0].addBattery(Battery("BS002", "LFP", 75.0f, "Type-A-75kWh"));
+    // S002 gets Type-B spares
+    stations[1].addBattery(Battery("BS003", "Lithium-Ion", 100.0f, "Type-B-100kWh"));
+    stations[1].addBattery(Battery("BS004", "Solid-State", 100.0f, "Type-B-100kWh"));
+    // S003 gets mixed
+    stations[2].addBattery(Battery("BS005", "LFP", 75.0f, "Type-A-75kWh"));
+    stations[2].addBattery(Battery("BS006", "LFP", 60.0f, "Type-C-60kWh"));
+    // S004
+    stations[3].addBattery(Battery("BS007", "Lithium-Ion", 75.0f, "Type-A-75kWh"));
+    stations[3].addBattery(Battery("BS008", "Lithium-Ion", 15.0f, "Type-D-15kWh"));
+    // S005
+    stations[4].addBattery(Battery("BS009", "Solid-State", 75.0f, "Type-A-75kWh"));
+    stations[4].addBattery(Battery("BS010", "LFP", 60.0f, "Type-C-60kWh"));
+
+    // Rate station spare batteries (all fresh - high ratings)
+    for (int i = 0; i < 10; i++) {
+        std::string sid = "S00" + std::to_string(i < 9 ? i + 1 : 10);
+        for (auto& s : stations) {
+            if (s.getStationId() == sid) {
+                auto bats = s.getAvailableBatteries();
+                for (auto b : bats) {
+                    BatteryRating r("R-" + b.getBatteryId(), "station", b.getBatteryId(),
+                        96.0f, 100, 0);
+                }
+            }
+        }
+    }
+
+    std::cout << "[Demo data loaded: 10 vehicles, 10 batteries, 10 stations]\n";
+}
+
+// -------------------------------------------------------
 // Main
 // -------------------------------------------------------
 int main() {
     std::vector<Vehicle>     vehicles;
     std::vector<Battery>     batteries;
     std::vector<SwapStation> stations;
+
+    prepopulate(vehicles, batteries, stations);
 
     int choice;
 

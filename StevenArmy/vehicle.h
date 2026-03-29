@@ -29,11 +29,11 @@ public:
     std::string requestSwap() const;
 
 private:
-    std::string vehicleId;
-    std::string type;
-    std::string make;
-    std::string model;
+	std::string vehicleId;   // gg: "V-1234"
+	std::string type; 	 // "sedan" | "suv" | "truck" | "motorcycle" etc. (could be used for filtering stations)
+	std::string make;  // e.g. "Tesla"
+	std::string model; // e.g. "Model 3"
     std::string batterySlotSpec;    // e.g. "Type-A-75kWh"
-    std::string currentBatteryId;
+    std::string currentBatteryId; // empty stringif no battery is installed
     int ownerRating;                // 1–5, pulled from latest BatteryRating
 };

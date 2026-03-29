@@ -29,8 +29,8 @@ public:
 
 private:
     std::string batteryId;
-    std::string type;
+	std::string type;   //make/model agnostic type, e.g. "Type-A-75kWh"
     float capacityKwh;
     int rating;           // 1–5
-    std::string compatibleSlots;
+	std::string compatibleSlots;  // Comma-separated list of compatible slot specs, e.g. "Type-A-75kWh,Type-A-100kWh"
 };
